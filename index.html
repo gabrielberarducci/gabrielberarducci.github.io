@@ -1,161 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLD Adventure Gear | Your Guide to 4x4 & Camping Equipment</title>
+    <meta name="description" content="The best reviews and guides for 4x4, camping, and overlanding gear tested for Queensland's tough conditions. Find the right equipment for your ute, camper, or motorhome.">
+    <link rel="stylesheet" href="css/style.css">
+    <script>document.body.dataset.basepath = '.';</script>
+    <script src="js/main.js" defer></script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is a simple HTML page.</p>
-    <script>
-        console.log("Hello, World!");
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        p {
-            font-size: 16px;
-        }
-    </style>
-    <img src="https://via.placeholder.com/150" alt="Placeholder Image" />
-    <a href="https://www.example.com">Visit Example.com</a>
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
-    <table border="1">
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-        </tr>
-        <tr>
-            <td>Data 1</td>
-            <td>Data 2</td>
-        </tr>
-        <tr>            
-            <td>Data 3</td>
-            <td>Data 4</td>
-        </tr>
-    </table>
-    <form action="#" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <input type="submit" value="Submit">
-    </form>
-    <footer>
-        <p>&copy; 2023 My Website</p>
-    </footer>
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            alert('Hello, ' + name + '!');
-        });
-    </script>
-    <style>
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple HTML page demonstrating basic elements and styles.">
-    <meta name="keywords" content="HTML, CSS, JavaScript, example">
-    <meta name="author" content="Your Name">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .icon {
-            font-size: 24px;
-            color: #2c3e50;
-            margin: 10px;
-        }
-    </style>
-    <i class="fas fa-home icon"></i>
-    <i class="fas fa-user icon"></i>
-    <i class="fas fa-cog icon"></i>
-    <p>Icons from Font Awesome.</p>
-    <script>
-        document.querySelectorAll('.icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                alert('You clicked on an icon!');
-            });
-        });
-    </script>
-    <div class="container">
-        <h2>Container Example</h2>
-        <p>This is a container that can hold various elements.</p>
-        <button onclick="alert('Button clicked!')">Click Me</button>
-    </div>
-    <style>
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 600px;
-        }
-        .container h2 {
-            color: #2980b9;
-        }
-        .container p {
-            font-size: 18px;
-        }
-        .container button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .container button:hover {
-            background-color: #2980b9;
-        }
-    </style>
-    <script>
-        document.querySelector('.container button').addEventListener('click', function() {
-            alert('Button inside the container clicked!');
-        });
-    </script>
-    <div class="responsive-image">
-        <img src="https://via.placeholder.com/600x400" alt="Responsive Image" style="width: 100%; height: auto;">
-    </div>
-    <style>
-        .responsive-image {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-        .responsive-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-    </style>
-    <script>
-        document.querySelector('.responsive-image img').addEventListener('click', function() {
-            alert('Responsive image clicked!');
-        });
-    </script>
-    <div class="grid-container">
-        <div class="grid-item">Grid Item 1</div>
-        <div class="grid-item">Grid Item 2</div>
-        <div class="grid-item">Grid Item 3</div>
-        <div class="grid-item">Grid Item 4</div>
-    </div>
+    <header id="header-placeholder"></header>
+
+    <main class="container">
+        <section class="hero text-center">
+            <h1>Conquer Queensland: The Ultimate Gear Guide</h1>
+            <p class="lead">Welcome, mate! Planning an epic adventure across the Sunshine State? From the rugged ranges to the sandy coasts, having the right gear is crucial. We're here to help you find top-notch equipment for your 4x4, camper, ute, or motorhome, all tested and reviewed for QLD's unique conditions.</p>
+            <a href="/posts/review-best-camp-fridges-for-a-qld-summer.html" class="btn btn-primary">See Latest Reviews</a>
+            <a href="/posts/guide-setting-up-your-ute-canopy-for-touring.html" class="btn btn-secondary mt-1">Explore How-To Guides</a>
+        </section>
+
+        <div id="ads-placeholder-header" class="mt-3"></div>
+
+        <section class="latest-reviews mt-3">
+            <h2>Latest Gear Reviews</h2>
+            <div class="card">
+                <h3><a href="/posts/review-best-camp-fridges-for-a-qld-summer.html">Best Camp Fridges for a QLD Summer</a></h3>
+                <p>Keeping your tucker and bevvies cold is non-negotiable in the Queensland heat. We put the top camp fridges through their paces to see which ones can handle a true blue Aussie summer. See our top picks, from compact units for the weekend warrior to massive fridges for the big lap...</p>
+                <a href="/posts/review-best-camp-fridges-for-a-qld-summer.html" class="btn">Read Full Review</a>
+            </div>
+            <!-- Add more latest review snippets here as cards -->
+             <div class="card">
+                <h3><a href="#">Top Rated Recovery Kits for Boggy Tracks</a></h3>
+                <p>Don't get stuck in the mud! A reliable recovery kit is essential for any off-road adventure in QLD. We review kits with everything you need, from snatch straps to shackles.</p>
+                <a href="#" class="btn">Coming Soon!</a>
+            </div>
+        </section>
+
+        <section class="popular-guides mt-3">
+            <h2>Popular How-To Guides</h2>
+            <div class="card">
+                <h3><a href="/posts/guide-setting-up-your-ute-canopy-for-touring.html">How to Set Up Your Ute Canopy for Touring</a></h3>
+                <p>Transform your ute into the ultimate touring machine! This guide walks you through setting up your canopy with power, storage, a kitchen, and water solutions, making your trips more comfortable and organised. Get ready to hit the road with confidence...</p>
+                <a href="/posts/guide-setting-up-your-ute-canopy-for-touring.html" class="btn">Read Full Guide</a>
+            </div>
+            <!-- Add more popular guide snippets here as cards -->
+            <div class="card">
+                <h3><a href="#">Essential 12V Solar Setup for Off-Grid Camping</a></h3>
+                <p>Learn how to design and install a 12V solar system for your camper or 4x4, ensuring you have power wherever your Queensland adventures take you. We cover panels, batteries, chargers, and more.</p>
+                <a href="#" class="btn">Coming Soon!</a>
+            </div>
+        </section>
+        
+        <section class="cta text-center mt-3">
+            <h2>Ready for Your Next QLD Adventure?</h2>
+            <p>Browse our expert reviews and practical guides to equip yourself with the best gear. Adventure with confidence, knowing you've made informed choices.</p>
+            <a href="/about.html" class="btn">Learn More About Us</a>
+        </section>
+
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
