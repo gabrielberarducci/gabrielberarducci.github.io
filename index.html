@@ -1,67 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QLD Adventure Gear | Your Guide to 4x4 & Camping Equipment</title>
-    <meta name="description" content="The best reviews and guides for 4x4, camping, and overlanding gear tested for Queensland's tough conditions. Find the right equipment for your ute, camper, or motorhome.">
-    <link rel="stylesheet" href="css/style.css">
-    <script>document.body.dataset.basepath = '.';</script>
-    <script src="js/main.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aussie Adventure Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1A3D5D', // Deep Sapphire Blue
+              secondary: '#F7A072', // Terracotta Orange
+              accent: '#F9DB79', // Pale Gold / Sand
+              lightBg: '#F8F9FA', // Very Light Gray
+              darkText: '#212529', // Dark Gray
+              mutedText: '#6C757D', // Muted Gray
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
+  }
+}
+</script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body>
-    <header id="header-placeholder"></header>
-
-    <main class="container">
-        <section class="hero text-center">
-            <h1>Conquer Queensland: The Ultimate Gear Guide</h1>
-            <p class="lead">Welcome, mate! Planning an epic adventure across the Sunshine State? From the rugged ranges to the sandy coasts, having the right gear is crucial. We're here to help you find top-notch equipment for your 4x4, camper, ute, or motorhome, all tested and reviewed for QLD's unique conditions.</p>
-            <a href="/posts/review-best-camp-fridges-for-a-qld-summer.html" class="btn btn-primary">See Latest Reviews</a>
-            <a href="/posts/guide-setting-up-your-ute-canopy-for-touring.html" class="btn btn-secondary mt-1">Explore How-To Guides</a>
-        </section>
-
-        <div id="ads-placeholder-header" class="mt-3"></div>
-
-        <section class="latest-reviews mt-3">
-            <h2>Latest Gear Reviews</h2>
-            <div class="card">
-                <h3><a href="/posts/review-best-camp-fridges-for-a-qld-summer.html">Best Camp Fridges for a QLD Summer</a></h3>
-                <p>Keeping your tucker and bevvies cold is non-negotiable in the Queensland heat. We put the top camp fridges through their paces to see which ones can handle a true blue Aussie summer. See our top picks, from compact units for the weekend warrior to massive fridges for the big lap...</p>
-                <a href="/posts/review-best-camp-fridges-for-a-qld-summer.html" class="btn">Read Full Review</a>
-            </div>
-            <!-- Add more latest review snippets here as cards -->
-             <div class="card">
-                <h3><a href="#">Top Rated Recovery Kits for Boggy Tracks</a></h3>
-                <p>Don't get stuck in the mud! A reliable recovery kit is essential for any off-road adventure in QLD. We review kits with everything you need, from snatch straps to shackles.</p>
-                <a href="#" class="btn">Coming Soon!</a>
-            </div>
-        </section>
-
-        <section class="popular-guides mt-3">
-            <h2>Popular How-To Guides</h2>
-            <div class="card">
-                <h3><a href="/posts/guide-setting-up-your-ute-canopy-for-touring.html">How to Set Up Your Ute Canopy for Touring</a></h3>
-                <p>Transform your ute into the ultimate touring machine! This guide walks you through setting up your canopy with power, storage, a kitchen, and water solutions, making your trips more comfortable and organised. Get ready to hit the road with confidence...</p>
-                <a href="/posts/guide-setting-up-your-ute-canopy-for-touring.html" class="btn">Read Full Guide</a>
-            </div>
-            <!-- Add more popular guide snippets here as cards -->
-            <div class="card">
-                <h3><a href="#">Essential 12V Solar Setup for Off-Grid Camping</a></h3>
-                <p>Learn how to design and install a 12V solar system for your camper or 4x4, ensuring you have power wherever your Queensland adventures take you. We cover panels, batteries, chargers, and more.</p>
-                <a href="#" class="btn">Coming Soon!</a>
-            </div>
-        </section>
-        
-        <section class="cta text-center mt-3">
-            <h2>Ready for Your Next QLD Adventure?</h2>
-            <p>Browse our expert reviews and practical guides to equip yourself with the best gear. Adventure with confidence, knowing you've made informed choices.</p>
-            <a href="/about.html" class="btn">Learn More About Us</a>
-        </section>
-
-    </main>
-
-    <footer id="footer-placeholder"></footer>
-<script type="module" src="/index.tsx"></script>
-</body>
+  <body class="bg-lightBg font-sans text-darkText">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
