@@ -2,77 +2,85 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import ArticleCard from '../components/ArticleCard';
-import { ARTICLES, CATEGORIES } from '../constants';
+import { useArticles } from '../contexts/ArticleContext';
+import LoadingSpinner from '../components/LoadingSpinner';
 import { Link } from 'react-router-dom';
+import { CATEGORIES } from '../constants';
 
 const HomePage: React.FC = () => {
-  const featuredArticles = ARTICLES.slice(0, 3); // Show first 3 articles as featured
+  const { articles, isLoading, error } = useArticles();
+
+  const recentArticles = articles.slice(0, 3); // Show latest 3 articles
 
   return (
-    <div>
+    <div className="space-y-12">
       <HeroSection
-        title="Explore Wild Australia"
-        subtitle="Your ultimate resource for Aussie adventures: 4x4s, camping, caravans, ute gear, and unbiased reviews to fuel your journey."
-        imageUrl="https://picsum.photos/seed/aussiehero/1920/1080"
-        imageAlt="Epic Australian landscape with a 4x4 vehicle"
-        ctaText="Discover Articles"
-        ctaLink="#featured-articles" // Link to section on page or a category page
+        title="Your Aussie Adventure Starts Here!"
+        subtitle="Discover the best gear, tips, and destinations for exploring the great Australian outdoors. From rugged 4x4 tracks to serene campsites, we've got you covered."
+        imageUrl="https://picsum.photos/seed/aussiehero/1600/900"
+        ctaText="Explore Articles"
+        ctaLink="/blog"
       />
 
-      <section id="categories" className="py-16 bg-lightBg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-heading font-bold text-primary text-center mb-12">Browse by Category</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {CATEGORIES.map((category) => (
-              <Link
-                key={category.slug}
-                to={`/category/${category.slug}`}
-                className="block p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center group"
-              >
-                <h3 className="text-2xl font-heading font-semibold text-primary group-hover:text-secondary transition-colors mb-2">{category.name}</h3>
-                <p className="text-mutedText text-sm">Explore {category.name.toLowerCase()} articles and guides.</p>
-              </Link>
+      <section>
+        <h2 className="text-3xl font-display font-bold text-slate-800 mb-8 text-center">
+          Latest from the Blog
+        </h2>
+        {isLoading && <LoadingSpinner />}
+        {error && <p className="text-red-500 text-center">{error}</p>}
+        {!isLoading && !error && recentArticles.length > 0 && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {recentArticles.map(article => (
+              <ArticleCard key={article.slug} article={article} />
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="featured-articles" className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-heading font-bold text-primary text-center mb-12">
-            Latest Adventures & Insights
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
-            {featuredArticles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-          {ARTICLES.length > 3 && (
-             <div className="text-center mt-12">
+        )}
+         {!isLoading && !error && recentArticles.length === 0 && (
+            <p className="text-slate-600 text-center">No articles found yet. Check back soon, mate!</p>
+        )}
+        {!isLoading && articles.length > 3 && (
+            <div className="text-center mt-12">
                 <Link 
-                    to="/articles" // Assuming a future route for all articles
-                    className="bg-primary hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors text-lg shadow-md"
+                    to="/blog" 
+                    className="bg-eucalyptus-green hover:bg-eucalyptus-green-dark text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 >
-                    View All Articles
+                    View All Articles <i className="fas fa-arrow-right ml-2"></i>
                 </Link>
             </div>
-          )}
+        )}
+      </section>
+
+      <section className="py-12 bg-sandy-beige rounded-lg shadow">
+        <h2 className="text-3xl font-display font-bold text-slate-800 mb-10 text-center">
+          Explore by Category
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 px-4">
+          {CATEGORIES.map(category => (
+            <Link 
+              key={category.slug} 
+              to={`/category/${category.slug}`}
+              className="group flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:bg-aussie-ochre transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <i className={`${category.icon} text-4xl text-eucalyptus-green group-hover:text-white mb-3 transition-colors duration-300`}></i>
+              <span className="text-sm font-semibold text-slate-700 group-hover:text-white text-center transition-colors duration-300">{category.name}</span>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section className="py-16 bg-primary text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl font-heading font-bold mb-6">Gear Up for Your Next Adventure!</h2>
-              <p className="text-lg mb-8 max-w-2xl mx-auto">
-                  Find honest reviews on the latest 4x4 accessories, camping equipment, caravan essentials and more. We help you choose the right gear for Australian conditions.
-              </p>
-              <Link 
-                  to="/category/reviews"
-                  className="bg-secondary hover:bg-orange-500 text-primary font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 shadow-xl"
-              >
-                  Read Product Reviews
-              </Link>
-          </div>
+      {/* Placeholder for Gemini-powered tool */}
+      <section className="py-12">
+        <div className="bg-eucalyptus-green text-white p-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl font-display font-bold mb-4">Need Gear Advice?</h2>
+          <p className="mb-6 text-lg">
+            Our AI-powered assistant (coming soon!) can help you find the perfect gear for your next adventure based on your needs.
+          </p>
+          <button 
+            disabled 
+            className="bg-aussie-ochre text-white font-semibold py-3 px-6 rounded-lg opacity-50 cursor-not-allowed">
+            Ask Our AI (Coming Soon)
+          </button>
+        </div>
       </section>
     </div>
   );
