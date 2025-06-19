@@ -5,12 +5,14 @@ import { GEMINI_TEXT_MODEL, MOCK_API_KEY } from '../constants'; // MOCK_API_KEY 
 // IMPORTANT: In a real application, process.env.API_KEY MUST be used.
 // The MOCK_API_KEY is only for enabling the code to be syntactically valid here.
 // Ensure process.env.API_KEY is properly set in your deployment environment.
-const apiKey = process.env.API_KEY || MOCK_API_KEY; 
+const apiKey = (typeof process !== 'undefined' && process.env && process.env.API_KEY) 
+                ? process.env.API_KEY 
+                : MOCK_API_KEY;
 
 let ai: GoogleGenAI | null = null;
 
 if (!apiKey || apiKey === "YOUR_GEMINI_API_KEY_HERE") {
-  console.warn("Gemini API key is not configured. Gemini features will be disabled. Please set process.env.API_KEY.");
+  console.warn("Gemini API key is not configured or is using the placeholder. Gemini features will be disabled. Please set process.env.API_KEY in your environment.");
 } else {
    ai = new GoogleGenAI({ apiKey });
 }
