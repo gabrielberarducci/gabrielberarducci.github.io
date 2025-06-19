@@ -1,58 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aussie Adventure Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'aussie-ochre': '#D97706', // amber-600
-            'aussie-ochre-dark': '#B45309', // amber-700
-            'eucalyptus-green': '#047857', // emerald-600
-            'eucalyptus-green-dark': '#065F46', // emerald-700
-            'gum-leaf': '#A3BFB0',
-            'sandy-beige': '#F3EAD3',
-            'outback-sky': '#87CEEB',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Poppins', 'sans-serif'],
-          },
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Gear Australia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏕️</text></svg>">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': {
+                DEFAULT: '#059669', // emerald-600
+                light: '#10B981', // emerald-500
+                dark: '#047857', // emerald-700
+              },
+              'secondary': {
+                DEFAULT: '#F59E0B', // amber-500
+                light: '#FBBF24', // amber-400
+                dark: '#D97706', // amber-600
+              },
+              'neutral': {
+                light: '#F8FAFC', // slate-50
+                DEFAULT: '#F1F5F9', // slate-100
+                medium: '#94A3B8', // slate-400
+                dark: '#334155', // slate-700
+                darker: '#1E293B', // slate-800
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              poppins: ['Poppins', 'sans-serif'],
+            },
+            aspectRatio: {
+              '16/9': '16 / 9',
+              '4/3': '4 / 3',
+              '3/2': '3 / 2',
+              '1/1': '1 / 1',
+            }
+          }
         }
       }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/client": "https://esm.sh/react-dom@^19.1.0/client",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
-    "react/jsx-runtime": "https://esm.sh/react@^19.1.0/jsx-runtime",
-    "@google/genai": "https://esm.sh/@google/genai@^1.5.1",
     "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/"
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
   }
 }
 </script>
-<!-- Load Babel Standalone -->
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <div id="root"></div>
-  <!-- Update script type to text/babel and add data-type="module" -->
-  <script type="text/babel" data-type="module" data-presets="typescript,react" src="./index.tsx"></script>
+<body class="bg-neutral-light font-sans">
+    <header id="navbar-container" class="sticky top-0 z-50"></header>
+
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section id="hero-section-container">
+        <!-- Hero content will be injected by JS or can be static -->
+      </section>
+
+      <!-- Featured Articles Section -->
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-4xl font-bold text-center text-neutral-darker mb-4 font-poppins">
+            Latest <span class="text-primary">Adventure</span> Insights
+          </h2>
+          <p class="text-center text-neutral-dark text-lg mb-12 max-w-2xl mx-auto">
+            Stay updated with our newest product reviews, adventure tips, and installation guides curated for the Australian outback and beyond.
+          </p>
+          <div id="featured-posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog post cards will be injected here by js/home.js -->
+          </div>
+          <div class="text-center mt-12">
+            <a href="blog.html" class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
+              View All Articles
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Gear Picks Section -->
+      <section class="py-16 bg-neutral">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-4xl font-bold text-center text-neutral-darker mb-4 font-poppins">
+            Top <span class="text-secondary">Gear</span> Picks
+          </h2>
+          <p class="text-center text-neutral-dark text-lg mb-12 max-w-2xl mx-auto">
+            Handpicked equipment and accessories that we recommend for your next Aussie adventure. Built tough, tested for performance.
+          </p>
+          <div id="featured-products-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product cards will be injected here by js/home.js -->
+          </div>
+        </div>
+      </section>
+      
+      <!-- Ad Placeholder Section -->
+      <section class="py-12 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 class="text-2xl font-semibold text-center text-neutral-darker mb-8 font-poppins">
+            Special Offers from Our Partners
+          </h3>
+          <div id="ads-container" class="grid md:grid-cols-2 gap-8">
+            <!-- Ads will be injected here by js/home.js -->
+          </div>
+          <p class="text-xs text-neutral-medium text-center mt-4">These are promotional spots. Clicking them may lead to external sites.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-container" class="bg-neutral-darker text-neutral-light mt-12"></footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>

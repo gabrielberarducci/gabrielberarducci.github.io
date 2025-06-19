@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Blog - Adventure Gear Australia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏕️</text></svg>">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': {
+                DEFAULT: '#059669', // emerald-600
+                light: '#10B981', // emerald-500
+                dark: '#047857', // emerald-700
+              },
+              'secondary': {
+                DEFAULT: '#F59E0B', // amber-500
+                light: '#FBBF24', // amber-400
+                dark: '#D97706', // amber-600
+              },
+              'neutral': {
+                light: '#F8FAFC', // slate-50
+                DEFAULT: '#F1F5F9', // slate-100
+                medium: '#94A3B8', // slate-400
+                dark: '#334155', // slate-700
+                darker: '#1E293B', // slate-800
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              poppins: ['Poppins', 'sans-serif'],
+            },
+            aspectRatio: {
+              '16/9': '16 / 9',
+              '4/3': '4 / 3',
+              '3/2': '3 / 2',
+              '1/1': '1 / 1',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-neutral-light font-sans">
+    <header id="navbar-container" class="sticky top-0 z-50"></header>
+
+    <main class="flex-grow">
+        <header class="bg-primary text-white py-16 shadow-md">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 id="blog-page-title" class="text-5xl font-bold mb-4 font-poppins">Adventure Blog</h1>
+              <p id="blog-page-subtitle" class="text-xl text-neutral-light opacity-90">
+                Your hub for the latest tips, reviews, and guides on Aussie adventure gear.
+              </p>
+            </div>
+        </header>
+          
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search articles..."
+                class="w-full md:w-1/2 px-4 py-3 border border-neutral-medium rounded-lg shadow-sm focus:ring-2 focus:ring-primary focus:border-primary transition-shadow"
+              />
+              <div id="article-count" class="text-sm text-neutral-dark">
+                {/* Showing X of Y articles */}
+              </div>
+            </div>
+    
+            <div class="mb-10">
+              <h3 class="text-xl font-semibold text-neutral-darker mb-3">Filter by Category:</h3>
+              <div id="category-filters-container" class="flex flex-wrap gap-2">
+                <!-- Category pills will be injected here -->
+              </div>
+            </div>
+    
+            <div id="blog-posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+              <!-- Blog post cards will be injected here -->
+            </div>
+            <div id="no-results-message" class="text-center py-16 hidden">
+                <img src="https://picsum.photos/seed/noresults/300/200" alt="No results" class="mx-auto mb-6 rounded-lg shadow"/>
+                <h2 class="text-2xl font-semibold text-neutral-darker mb-2">No Articles Found</h2>
+                <p class="text-neutral-dark">
+                  Try adjusting your search or category filters, or check back later for new content!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container" class="bg-neutral-darker text-neutral-light mt-12"></footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
